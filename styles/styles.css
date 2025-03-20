@@ -1,0 +1,382 @@
+/* ------------------------------------------------- */
+/* Réinitialisation et styles globaux                */
+/* ------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+/* ------------------------------------------------- */
+/* Header et Navigation                              */
+/* ------------------------------------------------- */
+header {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 50px;
+  width: 100%;
+  top: 0;
+  position: sticky;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img{
+  width: 30px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #F0D800;
+}
+
+/* ------------------------------------------------- */
+/* Section Héros (Landing Page)                      */
+/* ------------------------------------------------- */
+.hero {
+  height: 100vh;
+  background: url('../images/4.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 800px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #F0D800;
+  color: #333;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #e0c700;
+}
+
+/* ------------------------------------------------- */
+/* Sections de page communes                         */
+/* ------------------------------------------------- */
+.page-section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-section h1,
+.page-section h2,
+.page-section h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.page-section p {
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ------------------------------------------------- */
+/* Section citation                                  */
+/* ------------------------------------------------- */
+.citation {
+  padding: 30px;
+  border-left: 5px solid #F0D800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  text-align: center;
+  margin: 50px auto;
+  animation: animationSection 2s ease-in-out;
+}
+
+.citation blockquote {
+  font-style: italic;
+  font-size: 1.4em;
+  color: #333;
+  margin: 0;
+}
+
+.citation p {
+  margin-top: 15px;
+  font-weight: bold;
+  color:  #F0D800;
+}
+
+
+/* ------------------------------------------------- */
+/* Section Livres / Books                           */
+/* ------------------------------------------------- */
+.books-section{
+  padding: 5px 50px;
+}
+
+.books-section h2 {
+  text-align: center;
+}
+
+.books-section hr,
+.critique-section hr {
+  height: 4px;
+  width: 100px;
+  border: none;
+  text-align: center;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #F0D800;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.book {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  align-items: stretch;
+}
+
+.book:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.book:hover img {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.book h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #F0D800;
+}
+
+.book p {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: justify;
+}
+
+/* ------------------------------------------------- */
+/* Section Critiques                                */
+/* ------------------------------------------------- */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.reviews-list .a,
+.reviews-list .c {
+  animation: gaucheDroite 2s ease-in-out;
+}
+
+.reviews-list .b {
+  animation: droiteGauche 2s ease-in-out;
+}
+
+.review {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.review h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.review p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.review a {
+  text-decoration: none;
+  color: #F0D800;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.review a:hover {
+  color: #e0c700;
+}
+
+/* ------------------------------------------------- */
+/* Section À propos                                 */
+/* ------------------------------------------------- */
+.about hr {
+  height: 4px;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  background-color: #F0D800;
+}
+
+.about {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #444;
+}
+
+.about p {
+  margin-bottom: 0px;
+  animation: gaucheDroite 1.5s linear;
+}
+
+/* ------------------------------------------------- */
+/* Footer                                           */
+/* ------------------------------------------------- */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------- */
+/* Responsive                                       */
+/* ------------------------------------------------- */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav ul {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .page-section {
+    padding: 60px 20px;
+  }
+
+  .books-section{
+    padding: 50px 10px;
+  }
+}
+
+/* ------------------------------------------------- */
+/* Animation                                         */
+/* ------------------------------------------------- */
+@keyframes animationSection {
+  0% {
+    transform: translateX(-50px) translateY(50px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-25px) translateY(25px) scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes gaucheDroite {
+  0% {
+    transform: translateX(-50px) rotate(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-25px) rotate(2deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes droiteGauche {
+  0% {
+    transform: translateX(50px) rotate(5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(25px) rotate(-2deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
